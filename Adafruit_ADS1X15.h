@@ -157,7 +157,7 @@ protected:
 public:
     bool begin(uint8_t i2c_addr = ADS1X15_ADDRESS, TwoWire* wire = &Wire);
 
-    virtual bool begin(SoftTwoWire* wire, uint8_t i2c_addr = ADS1X15_ADDRESS) {
+    virtual bool begin(SoftI2C* wire, uint8_t i2c_addr = ADS1X15_ADDRESS) {
         this->m_i2c_dev = new Adafruit_I2CDeviceSoft(i2c_addr, wire);
         return (this->m_i2c_dev->begin());
     };
